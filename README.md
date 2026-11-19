@@ -2,7 +2,7 @@
 
 Kostenlose, frei nutzbare Vorlagen für alle, die eine Ferienwohnung vermieten: Reinigungscheckliste, Hausordnung, Ausstattungs-Checkliste, Willkommensmappe, Nachrichtenvorlagen für Gäste und ein Mindestpreis-Rechner pro Nacht. Aus der Praxis von [RM Hospitality](https://www.rm-hospitality.de/ratgeber?utm_source=github&utm_medium=tool&utm_campaign=parasite-seo-2611), Bamberg. Wir betreuen rund 70 Ferienwohnungen in Deutschland, Österreich und Italien.
 
-**Direkt nutzen:** https://businessmoraeder-bmrooms.github.io/ferienwohnung-vorlagen/
+**Direkt nutzen:** https://rm-hospitality.github.io/ferienwohnung-vorlagen/
 
 ## Inhalt
 
