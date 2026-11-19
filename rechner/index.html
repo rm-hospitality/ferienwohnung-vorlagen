@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mindestpreis-Rechner Ferienwohnung: Preis pro Nacht berechnen (kostenlos)</title>
+<meta name="description" content="Kostenloser Rechner: Ab welchem Preis pro Nacht deckt Ihre Ferienwohnung Fixkosten, Reinigung und Plattformgebühren? Eigene Zahlen eintragen, Mindestpreis sofort sehen.">
+<link rel="canonical" href="https://businessmoraeder-bmrooms.github.io/ferienwohnung-vorlagen/rechner/">
+<meta property="og:title" content="Mindestpreis-Rechner für Ferienwohnungen">
+<meta property="og:description" content="Ab welchem Preis pro Nacht lohnt sich die Buchung? Fixkosten, Reinigung und Gebühren eintragen, Mindestpreis sehen.">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Mindestpreis-Rechner Ferienwohnung","applicationCategory":"BusinessApplication","operatingSystem":"Web","inLanguage":"de","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"creator":{"@type":"Organization","name":"RM Hospitality","url":"https://www.rm-hospitality.de"}}
+</script>
+<style>
+:root{--bg:#14161a;--card:#1a1d23;--line:#343a45;--text:#f4f1ea;--mute:#b9b4aa;--acc:#9e3048;--acc2:#ca7689}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:32px 20px 64px}
+h1{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:8px 0 12px}
+h2{font-size:22px;margin:36px 0 10px}
+p.lead{color:var(--mute);font-size:18px;margin:0 0 24px}
+.eyebrow{color:var(--acc2);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px 20px}
+label{display:block;font-weight:600;font-size:15px;margin-bottom:6px}
+small{display:block;color:var(--mute);font-size:13px;margin-top:4px}
+input{width:100%;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:#0f1114;color:var(--text);font-size:17px}
+input:focus{outline:2px solid var(--acc2);outline-offset:1px}
+.result{margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.big{font-size:40px;font-weight:800;line-height:1.1;margin:6px 0}
+.res-card{background:#0f1114;border:1px solid var(--line);border-radius:14px;padding:18px}
+.res-card.main{border-color:var(--acc)}
+.note{color:var(--mute);font-size:14px}
+.warn{color:#f0c36d}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-size:15px}
+td{padding:7px 4px;border-bottom:1px solid var(--line)}
+td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+a{color:var(--acc2)}
+footer{margin-top:40px;color:var(--mute);font-size:14px}
+</style>
+</head>
+<body>
+<main>
+<div class="eyebrow">Kostenloses Werkzeug für Gastgeber</div>
+<h1>Mindestpreis-Rechner: Ab welchem Preis pro Nacht lohnt sich Ihre Ferienwohnung?</h1>
+<p class="lead">Tragen Sie Ihre eigenen Kosten ein. Der Rechner zeigt den Preis pro Nacht, ab dem Fixkosten, Reinigung und Plattformgebühren gedeckt sind, und den Preis für Ihr Gewinnziel. Alles bleibt in Ihrem Browser, nichts wird gespeichert oder gesendet.</p>
+
+<form class="card" id="f" onsubmit="return false">
+  <p class="note" style="margin-top:0">Voreingestellt sind <strong>Beispielwerte (fiktiv)</strong>. Bitte durch Ihre Zahlen ersetzen.</p>
+  <div class="grid">
+    <div><label for="fix">Fixkosten pro Monat (€)</label><input id="fix" type="number" min="0" step="1" value="650"><small>Strom, Wasser, Heizung, Internet, Software, Versicherung, Rücklage, ggf. Miete oder Pacht</small></div>
+    <div><label for="nights">Belegte Nächte pro Monat</label><input id="nights" type="number" min="1" step="1" value="18"><small>Realistische Erwartung, nicht das Wunschziel</small></div>
+    <div><label for="los">Nächte pro Aufenthalt (Durchschnitt)</label><input id="los" type="number" min="1" step="0.1" value="3"><small>Bestimmt, wie oft gereinigt wird</small></div>
+    <div><label for="clean">Reinigungskosten pro Aufenthalt (€)</label><input id="clean" type="number" min="0" step="1" value="70"><small>Was die Reinigung Sie wirklich kostet</small></div>
+    <div><label for="supplies">Wäsche und Verbrauch pro Aufenthalt (€)</label><input id="supplies" type="number" min="0" step="1" value="18"><small>Bettwäsche, Handtücher, Kaffee, Toilettenpapier …</small></div>
+    <div><label for="fee">Reinigungsgebühr, die der Gast zahlt (€)</label><input id="fee" type="number" min="0" step="1" value="60"><small>0, wenn Sie keine separate Gebühr verlangen</small></div>
+    <div><label for="plat">Plattformgebühr (%)</label><input id="plat" type="number" min="0" max="60" step="0.1" value="15.5"><small>Ihre Gebühr laut Konto, auf den gesamten Buchungsbetrag</small></div>
+    <div><label for="mgmt">Verwaltung / Co-Host (%)</label><input id="mgmt" type="number" min="0" max="60" step="0.5" value="0"><small>0, wenn Sie selbst vermieten</small></div>
+    <div><label for="goal">Gewinnziel pro Monat (€)</label><input id="goal" type="number" min="0" step="10" value="500"><small>Was nach allen Kosten übrig bleiben soll</small></div>
+  </div>
+
+  <div class="result" aria-live="polite">
+    <div class="res-card main"><div class="eyebrow">Mindestpreis pro Nacht</div><div class="big" id="r-min">0 €</div><div class="note">Darunter verlieren Sie mit jeder Buchung Geld.</div></div>
+    <div class="res-card"><div class="eyebrow">Preis für Ihr Gewinnziel</div><div class="big" id="r-goal">0 €</div><div class="note">Durchschnittlicher Preis pro Nacht über den Monat.</div></div>
+  </div>
+  <p id="r-warn" class="warn" hidden></p>
+  <table aria-label="Rechenweg">
+    <tr><td>Aufenthalte pro Monat</td><td id="t-stays"></td></tr>
+    <tr><td>Kosten pro Monat (fix + je Aufenthalt)</td><td id="t-costs"></td></tr>
+    <tr><td>Einnahmen aus Reinigungsgebühren</td><td id="t-fees"></td></tr>
+    <tr><td>Anteil, der nach Gebühren bei Ihnen ankommt</td><td id="t-keep"></td></tr>
+  </table>
+</form>
+
+<h2>So rechnet der Rechner</h2>
+<p>Der Mindestpreis ist der Preis pro Nacht, bei dem nach Plattform- und Verwaltungsgebühr genau so viel übrig bleibt, wie Fixkosten und Kosten je Aufenthalt verschlingen:</p>
+<p class="card" style="font-family:ui-monospace,Menlo,monospace;font-size:14px">Aufenthalte = belegte Nächte ÷ Nächte pro Aufenthalt<br>
+Benötigter Umsatz = (Fixkosten + Aufenthalte × (Reinigung + Wäsche) + Gewinnziel) ÷ ((1 − Plattformgebühr) × (1 − Verwaltung))<br>
+Preis pro Nacht = (Benötigter Umsatz − Aufenthalte × Reinigungsgebühr des Gastes) ÷ belegte Nächte</p>
+<p>Wichtig: Das ist ein <strong>Durchschnitt</strong>. In der Praxis liegt der Preis an Wochenenden, Feiertagen und zu Messen deutlich darüber und an ruhigen Wochentagen darunter. Der Mindestpreis ist Ihre Untergrenze für die Preissteuerung, zum Beispiel als Mindestpreis in einem Tool für dynamische Preise.</p>
+<p>Steuern sind nicht berücksichtigt; das klärt Ihre Steuerberatung.</p>
+
+<h2>Mehr kostenlose Vorlagen</h2>
+<p>Reinigungscheckliste, Hausordnung, Ausstattungs-Checkliste, Willkommensmappe und Nachrichtenvorlagen für Gäste: <a href="../">alle Vorlagen ansehen</a>.</p>
+
+<footer>
+Ein kostenloses Werkzeug von <a href="https://www.rm-hospitality.de/dynamic-pricing-erklaert?utm_source=github&utm_medium=tool&utm_campaign=parasite-seo-2611">RM Hospitality</a>, Bamberg. Wir betreuen rund 70 Ferienwohnungen in Deutschland, Österreich und Italien. Code unter MIT-Lizenz, Texte unter CC BY 4.0. Keine Cookies, kein Tracking.
+</footer>
+</main>
+<script>
+(function(){
+  var ids=["fix","nights","los","clean","supplies","fee","plat","mgmt","goal"];
+  var eur=new Intl.NumberFormat("de-DE",{style:"currency",currency:"EUR",maximumFractionDigits:0});
+  var num=new Intl.NumberFormat("de-DE",{maximumFractionDigits:1});
+  function v(id){var x=parseFloat(document.getElementById(id).value);return isFinite(x)?x:0;}
+  function calc(){
+    var F=v("fix"),N=Math.max(v("nights"),0),L=Math.max(v("los"),1),C=v("clean"),W=v("supplies"),G=v("fee"),p=v("plat")/100,m=v("mgmt")/100,Z=v("goal");
+    var warn=document.getElementById("r-warn");
+    var keep=(1-p)*(1-m);
+    if(N<=0||keep<=0){warn.hidden=false;warn.textContent="Bitte belegte Nächte über 0 und Gebühren unter 100 % eintragen.";return;}
+    var S=N/L;
+    var price=function(goal){return ((F+S*(C+W)+goal)/keep - S*G)/N;};
+    var pMin=price(0),pGoal=price(Z);
+    document.getElementById("r-min").textContent=eur.format(Math.max(pMin,0));
+    document.getElementById("r-goal").textContent=eur.format(Math.max(pGoal,0));
+    document.getElementById("t-stays").textContent=num.format(S);
+    document.getElementById("t-costs").textContent=eur.format(F+S*(C+W));
+    document.getElementById("t-fees").textContent=eur.format(S*G);
+    document.getElementById("t-keep").textContent=num.format(keep*100)+" %";
+    if(G<C+W){warn.hidden=false;warn.textContent="Hinweis: Die Reinigungsgebühr des Gastes deckt Ihre Kosten je Aufenthalt nicht. Die Differenz steckt jetzt im Preis pro Nacht.";}
+    else{warn.hidden=true;}
+  }
+  ids.forEach(function(id){document.getElementById(id).addEventListener("input",calc);});
+  calc();
+})();
+</script>
+</body>
+</html>
